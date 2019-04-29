@@ -1,0 +1,17 @@
+{
+  "name": "cordova-plugin-bnasdk",
+  "version": "0.2.7",
+  "description": "Background Network Audit",
+  "cordova": {
+    "id": "cordova-plugin-bnasdk",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "bna",
+    "ericsson"
+  ],
+  "author": "Ericsson",
+  "license": "ISC"
+}

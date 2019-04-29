@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-bnasdk" version="0.2.6">
+  <name>BNA</name>
+  <description>Background Network Audit</description>
+  <js-module src="www/bnasdkcordova.js" name="bnasdkcordova">
+    <clobbers target="cordova.plugin.bnasdkcordova"/>
+  </js-module>
+  <platform name="android">
+    <source-file src="src/android/com/cordova/plugin/bnasdkcordova/BNASdkCordova.java" target-dir="src/com/cordova/plugin/bnasdkcordova"/>
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="BNASdkCordova">
+        <param name="android-package" value="com.cordova.plugin.bnasdkcordova.BNASdkCordova"/>
+      </feature>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      
+	<uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        android:protectionLevel="signature" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+
+		
+		<meta-data
+			android:name="com.ericsson.bna.application.name"
+			android:value="NRO Tracker ASP"/>
+		<meta-data
+			android:name="com.ericsson.bna.partner.name"
+			android:value="Panorama Sistemas Integrados"/>
+		<meta-data
+			android:name="com.ericsson.bna.application.domain"
+			android:value="http://nrotracker.com"/>
+		<meta-data
+			android:name="com.ericsson.bna.application.key"
+			android:value="com.ericsson.findfrete.asp"/>
+	  
+    </config-file>
+    <framework src="src/android/bnasdkcordova-build.gradle" custom="true" type="gradleReference"/>
+    <resource-file src="src/android/bnasdk-release.aar" target="libs/bnasdk-release.aar"/>
+  </platform>
+</plugin>
