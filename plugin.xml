@@ -47,6 +47,17 @@
 		<meta-data
 			android:name="com.ericsson.bna.application.key"
 			android:value="com.ericsson.findfrete.asp"/>
+
+      <service
+        android:name="com.evernote.android.job.gcm.PlatformGcmService"
+        android:enabled="true"
+        android:exported="true"
+        android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE"
+        tools:replace="android:enabled=false" >
+        <intent-filter>
+            <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
+        </intent-filter>
+      </service>
 	  
     </config-file>
     <framework src="src/android/bnasdkcordova-build.gradle" custom="true" type="gradleReference"/>
