@@ -6,7 +6,6 @@ repositories {
 
 dependencies {
     // Dependencias do BNA
-    implementation 'com.evernote:android-job:1.2.5'
     implementation 'com.google.android.gms:play-services-gcm:16.0.0'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
     implementation('com.google.apis:google-api-services-pubsub:v1-rev379-1.23.0') {
