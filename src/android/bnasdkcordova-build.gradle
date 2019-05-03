@@ -6,6 +6,7 @@ repositories {
 
 dependencies {
     // Dependencias do BNA
+    implementation 'com.android.tools.build:gradle:5.0.0'
     implementation 'com.evernote:android-job:1.2.5'
     implementation 'com.google.android.gms:play-services-gcm:16.0.0'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
@@ -21,23 +22,4 @@ dependencies {
     implementation 'com.j256.ormlite:ormlite-android:5.1'
     implementation 'com.j256.ormlite:ormlite-core:5.1'
     implementation(name:'bnasdk-release', ext:'aar')
-}
-
-subprojects {
-  project.configurations.all {
-      afterEvaluate {project ->
-        if (project.hasProperty("android")) {
-            android {
-                compileSdkVersion 26
-                buildToolsVersion '26.0.2'
-            }
-        }
-    }
-     resolutionStrategy.eachDependency { details ->
-        if (details.requested.group == 'com.android.support'
-              && !details.requested.name.contains('multidex') ) {
-           details.useVersion "26.0.2"
-        }
-     }
-  }
 }
