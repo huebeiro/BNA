@@ -19,6 +19,7 @@ dependencies {
     implementation 'com.j256.ormlite:ormlite-android:5.1'
     implementation 'com.j256.ormlite:ormlite-core:5.1'
     implementation(name:'bnasdk-release', ext:'aar')
+    implementation 'com.google.android.gms:play-services-gcm:16.0.0'
     implementation 'com.evernote:android-job:1.2.6'
 }
 
