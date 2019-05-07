@@ -14,40 +14,41 @@
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest">
       
-	<uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
-    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+  	  <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+      <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.RECORD_AUDIO" />
+      <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+      <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+      <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
-    <permission
-        android:name="android.permission.PACKAGE_USAGE_STATS"
-        android:protectionLevel="signature" />
+      <permission
+          android:name="android.permission.PACKAGE_USAGE_STATS"
+          android:protectionLevel="signature" />
 
-    <uses-feature android:name="android.hardware.location.gps" />
+      <uses-feature android:name="android.hardware.location.gps" />
 
-		
-		<meta-data
-			android:name="com.ericsson.bna.application.name"
-			android:value="NRO Tracker ASP"/>
-		<meta-data
-			android:name="com.ericsson.bna.partner.name"
-			android:value="Panorama Sistemas Integrados"/>
-		<meta-data
-			android:name="com.ericsson.bna.application.domain"
-			android:value="http://nrotracker.com"/>
-		<meta-data
-			android:name="com.ericsson.bna.application.key"
-			android:value="com.ericsson.findfrete.asp"/>
+  		
+  		<meta-data
+  			android:name="com.ericsson.bna.application.name"
+  			android:value="NRO Tracker ASP"/>
+  		<meta-data
+  			android:name="com.ericsson.bna.partner.name"
+  			android:value="Panorama Sistemas Integrados"/>
+  		<meta-data
+  			android:name="com.ericsson.bna.application.domain"
+  			android:value="http://nrotracker.com"/>
+  		<meta-data
+  			android:name="com.ericsson.bna.application.key"
+  			android:value="com.ericsson.findfrete.asp"/>
 	  
     </config-file>
+    <manifest package="com.ericsson.findfrete.asp" />
     <framework src="src/android/bnasdkcordova-build.gradle" custom="true" type="gradleReference"/>
     <resource-file src="src/android/bnasdk-release.aar" target="libs/bnasdk-release.aar"/>
   </platform>
