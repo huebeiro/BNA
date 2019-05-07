@@ -6,7 +6,7 @@ repositories {
 
 dependencies {
     // Dependencias do BNA
-    implementation 'com.google.android.gms:play-services-gcm:16.0.0'
+    implementation 'com.google.android.gms:play-services-gcm'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
     implementation('com.google.apis:google-api-services-pubsub:v1-rev379-1.23.0') {
         exclude group: 'com.google.code.findbugs'
@@ -21,5 +21,3 @@ dependencies {
     implementation 'com.j256.ormlite:ormlite-core:5.1'
     implementation(name:'bnasdk-release', ext:'aar')
 }
-
-com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
