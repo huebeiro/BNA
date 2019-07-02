@@ -6,13 +6,17 @@
     <clobbers target="cordova.plugin.bnasdkcordova"/>
   </js-module>
   <platform name="android">
-    <source-file src="src/android/com/cordova/plugin/bnasdkcordova/BNASdkCordova.java" target-dir="src/com/cordova/plugin/bnasdkcordova"/>
+    <source-file src="src/android/BNASdkCordova.java" target-dir="src/com/cordova/plugin/bnasdkcordova"/>
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="BNASdkCordova">
         <param name="android-package" value="com.cordova.plugin.bnasdkcordova.BNASdkCordova"/>
       </feature>
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest">
+
+    <js-module src="www/android/bnasdkcordova.js" name="bnasdk">
+      <clobbers target="navigator.bnasdk" />
+    </js-module>
       
 	<uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
