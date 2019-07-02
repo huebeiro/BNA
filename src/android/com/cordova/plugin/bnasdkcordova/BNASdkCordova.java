@@ -53,12 +53,12 @@ public class BNASdkCordova extends CordovaPlugin {
                 context = callbackContext;
                 if(hasPermisssion())
                 {
-                    try{
+                    /*try{
                         BnaSDK.create(this.mCordovaInterface.getContext().getApplicationContext());
                     }catch (Exception e){
                         Log.d("Description", e.toString());
                     }
-                    BnaSDK.instance().go(this.mCordovaInterface.getContext().getApplicationContext());
+                    BnaSDK.instance().go(this.mCordovaInterface.getContext().getApplicationContext());*/
                     PluginResult r = new PluginResult(PluginResult.Status.OK);
                     context.sendPluginResult(r);
                     callbackContext.success();
@@ -69,7 +69,7 @@ public class BNASdkCordova extends CordovaPlugin {
                 }
                 return true;
             case BNA_STOP:
-                BnaSDK.instance().stop(this.mCordovaInterface.getContext().getApplicationContext());
+                //BnaSDK.instance().stop(this.mCordovaInterface.getContext().getApplicationContext());
                 callbackContext.success();
                 return true;
             default:
