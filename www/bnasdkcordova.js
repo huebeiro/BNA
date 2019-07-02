@@ -1,5 +1,3 @@
-var argscheck = require('cordova/argscheck');
-var utils = require('cordova/utils');
 var exec = require('cordova/exec');
 
 var bnasdk = {
