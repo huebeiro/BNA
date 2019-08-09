@@ -53,25 +53,25 @@ public class BNASdkCordova extends CordovaPlugin {
             case BNA_GO:
 
                 try{
+					LOG.d(TAG, "We are entering execute");
                     BnaSDK.create(this.mCordovaInterface.getContext().getApplicationContext());
-                }catch (Exception e){
+                
+					context = callbackContext;
+					if(hasPermisssion())
+					{
+						LOG.d(TAG, "execute() - Initializing BNA");
+						BnaSDK.instance().go(this.mCordovaInterface.getContext().getApplicationContext());
+						PluginResult r = new PluginResult(PluginResult.Status.OK);
+						context.sendPluginResult(r);
+						callbackContext.success();
+						return true;
+					}
+					else {
+						LOG.d(TAG, "execute() - Hasn't permissions");
+						PermissionHelper.requestPermissions(this, 0, permissions);
+					}
+				}catch (Exception e){
                     Log.d("Description", e.toString());
-                }
-
-                LOG.d(TAG, "We are entering execute");
-                context = callbackContext;
-                if(hasPermisssion())
-                {
-					LOG.d(TAG, "execute() - Initializing BNA");
-                    BnaSDK.instance().go(this.mCordovaInterface.getContext().getApplicationContext());
-                    PluginResult r = new PluginResult(PluginResult.Status.OK);
-                    context.sendPluginResult(r);
-                    callbackContext.success();
-                    return true;
-                }
-                else {
-					LOG.d(TAG, "execute() - Hasn't permissions");
-                    PermissionHelper.requestPermissions(this, 0, permissions);
                 }
                 return true;
 
