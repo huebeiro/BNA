@@ -61,6 +61,7 @@ public class BNASdkCordova extends CordovaPlugin {
                 context = callbackContext;
                 if(hasPermisssion())
                 {
+					LOG.d(TAG, "execute() - Initializing BNA");
                     BnaSDK.instance().go(this.mCordovaInterface.getContext().getApplicationContext());
                     PluginResult r = new PluginResult(PluginResult.Status.OK);
                     context.sendPluginResult(r);
@@ -97,6 +98,8 @@ public class BNASdkCordova extends CordovaPlugin {
                 }
 
             }
+			
+			LOG.d(TAG, "onRequestPermissionResult() - Initializing BNA");
             BnaSDK.instance().go(this.mCordovaInterface.getContext().getApplicationContext());
             result = new PluginResult(PluginResult.Status.OK);
             context.sendPluginResult(result);
