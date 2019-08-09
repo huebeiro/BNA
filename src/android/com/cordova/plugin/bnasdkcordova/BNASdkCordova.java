@@ -39,6 +39,7 @@ public class BNASdkCordova extends CordovaPlugin {
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.RECORD_AUDIO,
             Manifest.permission.WRITE_EXTERNAL_STORAGE};
+			
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
@@ -69,23 +70,29 @@ public class BNASdkCordova extends CordovaPlugin {
                     return true;
                 }
                 else {
+					LOG.d(TAG, "execute() - Hasn't permissions");
                     PermissionHelper.requestPermissions(this, 0, permissions);
                 }
                 return true;
 
             case BNA_STOP:
+                LOG.d(TAG, "Stopping SDK");
                 BnaSDK.instance().stop(this.mCordovaInterface.getContext().getApplicationContext());
                 callbackContext.success();
                 return true;
             default:
+                LOG.d(TAG, "Unexpected action: " + action);
                 return false;
         }
 
     }
-
+	
+    @Override
     public void onRequestPermissionResult(int requestCode, String[] permissions,
                                           int[] grantResults) throws JSONException
     {
+		
+		LOG.d(TAG, "onRequestPermissionResult()");
         PluginResult result;
         //This is important if we're using Cordova without using Cordova, but we have the geolocation plugin installed
         if(context != null) {
@@ -111,6 +118,7 @@ public class BNASdkCordova extends CordovaPlugin {
         {
             if(!PermissionHelper.hasPermission(this, p))
             {
+				LOG.d(TAG, "Does not have permission: " + p);
                 return false;
             }
         }
