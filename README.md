@@ -164,4 +164,6 @@ Para saber mais a respeito de Requisição de Permissões Android, clique [AQUI]
 
 ## Authors
 
-* **Antonio Marcos** - [Email](amoj@ecomp.poli.br)
+* **Bruno Freitas** - [GitHub](http://brfreitas.github.io/)
+* **Pedro Moura** - [GitHub](https://github.com/pedrodimoura)
+* **André Lucas**  - [GitHub](https://github.com/andrelucasti)
